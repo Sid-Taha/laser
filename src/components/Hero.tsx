@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 import React from "react";
 import { ImagesSlider } from "./ui/images-slider";
-import Link from "next/link";
 import { Dancing_Script } from "next/font/google"; // Importing Google Font
 import { Playfair_Display } from "next/font/google";
 
@@ -12,10 +11,6 @@ const playfair = Playfair_Display({
   weight: ["700", "800"],
 });
 
-const dancingScript = Dancing_Script({
-  subsets: ["latin"],
-  weight: ["400", "700"], // Adding different weights for better styling
-});
 
 export default function ImagesSliderDemo() {
   const images = [

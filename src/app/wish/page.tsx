@@ -5,8 +5,22 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
+
+interface IData{
+  _id: string,
+  image: string,
+  description: string,
+  price : number,
+  name : string,
+  category : string,
+  discountPercentage : number,
+  isFeaturedProduct : boolean,
+  stockLevel : number
+}
+
+
 const Favorites = () => {
-  const [favorites, setFavorites] = useState<any[]>([]);
+  const [favorites, setFavorites] = useState<IData[]>([]);
 
   useEffect(() => {
     const storedFavorites = JSON.parse(localStorage.getItem("favorites") || "[]");
@@ -14,7 +28,7 @@ const Favorites = () => {
   }, []);
 
   const handleRemoveFromFavorites = (productId: string) => {
-    const updatedFavorites = favorites.filter((product: any) => product._id !== productId);
+    const updatedFavorites = favorites.filter((product: IData) => product._id !== productId);
     localStorage.setItem("favorites", JSON.stringify(updatedFavorites));
     setFavorites(updatedFavorites);
   };
@@ -27,7 +41,7 @@ const Favorites = () => {
           {favorites.length === 0 ? (
             <p>No favorite products added.</p>
           ) : (
-            favorites.map((product: any) => (
+            favorites.map((product: IData) => (
               <div key={product._id} className="product-card">
                 <Image
                   className="w-full "

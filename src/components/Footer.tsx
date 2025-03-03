@@ -1,6 +1,7 @@
 import React from "react";
 import { FaFacebookF, FaLinkedin, FaWhatsapp, FaMapMarkerAlt } from "react-icons/fa";
 import Link from "next/link";
+import Image from "next/image";
 
 const Footer: React.FC = () => {
   return (
@@ -9,7 +10,7 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
           {/* Company Info */}
           <div className="space-y-4">
-            <img 
+            <Image 
               src="/main_logo.png" // Update with your logo path
               alt="Company Logo"
               className="h-28 w-auto mb-4"

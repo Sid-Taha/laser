@@ -8,8 +8,21 @@ import { Button } from "@/components/ui/button";
 import { useParams } from "next/navigation";
 import Link from "next/link";
 
+
+interface IData{
+    _id: string,
+    image: string,
+    description: string,
+    price : number,
+    name : string,
+    category : string,
+    discountPercentage : number,
+    isFeaturedProduct : boolean,
+    stockLevel : number
+}
+
 const ShopProducts = () => {
-  const [product, setProduct] = useState<any>(null);
+  const [product, setProduct] = useState<IData>();
   const { shop } = useParams();
 
   useEffect(() => {
@@ -33,7 +46,7 @@ const ShopProducts = () => {
             stockLevel
           }
         `);
-        const currentProduct = response.find((item: any) => item._id === shop);
+        const currentProduct = response.find((item: IData) => item._id === shop);
         setProduct(currentProduct || null);
       } catch (error) {
         console.error("Failed to fetch product data:", error);
@@ -45,7 +58,7 @@ const ShopProducts = () => {
 
   const handleAddToFavorites = () => {
     const favorites = JSON.parse(localStorage.getItem("favorites") || "[]");
-    if (!favorites.some((fav: any) => fav._id === product._id)) {
+    if (!favorites.some((fav: IData) => fav._id === product?._id)) {
       favorites.push(product);
       localStorage.setItem("favorites", JSON.stringify(favorites));
     }
