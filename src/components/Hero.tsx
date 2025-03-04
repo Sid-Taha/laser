@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 import React from "react";
 import { ImagesSlider } from "./ui/images-slider";
-import { Dancing_Script } from "next/font/google"; // Importing Google Font
 import { Playfair_Display } from "next/font/google";
 
 const playfair = Playfair_Display({

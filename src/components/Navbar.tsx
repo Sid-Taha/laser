@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { CiShoppingCart, CiHeart, CiSearch } from "react-icons/ci";
+import { CiShoppingCart, CiHeart } from "react-icons/ci";
 import { HiOutlineHome } from "react-icons/hi";
 import { UserButton } from "@clerk/nextjs";
 import { ModeToggle } from "./ModeToggle";

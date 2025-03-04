@@ -54,7 +54,7 @@ const Customers = () => {
               className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg transition-all duration-300 hover:shadow-xl"
             >
               <p className="text-gray-600 dark:text-gray-300 italic mb-6">
-                "{testimonial.text}"
+                {testimonial.text}
               </p>
               <div className="flex items-center">
                 <div className="relative h-12 w-12">
