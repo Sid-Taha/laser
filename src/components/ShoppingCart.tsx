@@ -2,9 +2,21 @@
 import { useEffect, useState } from "react";
 import { useCart } from "./cartContext";
 
+interface Product {
+  _id: string;
+  name: string;
+  description: string;
+  price: number;
+  image: string;
+  discountPercentage: number;
+  isFeaturedProduct: boolean;
+  stockLevel: number;
+  category: string;
+}
+
 export default function ShoppingCart() {
   const { updateCartCount } = useCart(); // Get updateCartCount function
-  const [cartItem, setCartItem] = useState([]);
+  const [cartItem, setCartItem] = useState<Product[]>([]);
 
   useEffect(() => {
     const cart = localStorage.getItem("cart");
