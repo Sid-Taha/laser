@@ -13,6 +13,8 @@ const Footer: React.FC = () => {
             <Image 
               src="/main_logo.png" // Update with your logo path
               alt="Company Logo"
+              width={130}
+              height={70}
               className="h-28 w-auto mb-4"
             />
             <div className="flex items-start space-x-2">
